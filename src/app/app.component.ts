@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/template/header/header.component';
-import {MatToolbarModule} from '@angular/material/toolbar'
-
+import { FooterComponent } from './components/template/footer/footer.component';
+import { NavComponent } from './components/template/nav/nav.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, MatToolbarModule],
+  imports: [
+    RouterOutlet, HeaderComponent, 
+    MatSlideToggleModule, FooterComponent,
+    NavComponent
+  ],
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
