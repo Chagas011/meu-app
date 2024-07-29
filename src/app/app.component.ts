@@ -4,13 +4,17 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { RouterLink } from '@angular/router';
+import { RouterLinkActive } from '@angular/router';
+import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet, HeaderComponent, 
     MatSlideToggleModule, FooterComponent,
-    NavComponent
+    NavComponent, RouterLink, RouterLinkActive, ProductCreateComponent
+    
   ],
   templateUrl: 'app.component.html'
 })
