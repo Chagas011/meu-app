@@ -16,4 +16,8 @@ export class ProductCrudComponent {
   navigateToProductCreate(): void { 
     this.router.navigate(['/products/create'])
   }
+
+  navigateToProductRead(): void { 
+    this.router.navigate(['/products/read'])
+  }
 }

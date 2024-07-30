@@ -1,4 +1,6 @@
-button { 
 
-    margin-right: 30px;
+form { 
+    display: flex; 
+    flex-direction: column;
 }
+

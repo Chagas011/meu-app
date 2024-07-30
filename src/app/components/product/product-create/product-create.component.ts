@@ -3,28 +3,35 @@ import {MatButtonModule} from '@angular/material/button'
 import { ProductService } from '../product.service';
 import { Router } from '@angular/router';
 import { Product } from '../product.model';
+import {FormsModule} from '@angular/forms'
+import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatInputModule} from '@angular/material/input'
+import {MatCardModule} from '@angular/material/card'
 
 @Component({
   selector: 'app-product-create',
   standalone: true,
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, FormsModule, 
+    MatFormFieldModule, MatInputModule, MatCardModule],
   templateUrl: './product-create.component.html',
   styleUrl: './product-create.component.css'
 })
 export class ProductCreateComponent {
-
+  product: Product = { 
+    id: 0,
+    name: '',
+    price: 0
+  }
 
  constructor(private productService: ProductService,
   private router: Router) {}
 
  createProduct(): void { 
-    const product: Product = { 
-      name: 'prduto novo5',
-      price: 99.99
-    }
-    this.productService.create(product).subscribe(() => { 
+    
+    this.productService.create(this.product).subscribe(() => { 
       this.productService.showMessage('operacao executada')
     })
+    this.router.navigate(['/products'])
    
  }
 
