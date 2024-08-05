@@ -29,9 +29,9 @@ export class ProductCreateComponent {
  createProduct(): void { 
     
     this.productService.create(this.product).subscribe(() => { 
-      this.productService.showMessage('operacao executada')
+      this.productService.showMessage('Produto Cadastrado com sucesso')
     })
-    this.router.navigate(['/products'])
+    this.router.navigate(['/products/read'])
    
  }
 
